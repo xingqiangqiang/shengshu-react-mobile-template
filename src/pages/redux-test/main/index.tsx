@@ -1,5 +1,5 @@
 import { RootState } from '@/store';
-import { Button } from 'antd';
+import { Button } from 'antd-mobile';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { add, reduce } from '../reducer';
@@ -17,10 +17,10 @@ const IndexView = () => {
 
   return (
     <div>
-      <Button type="primary" onClick={() => handleClick()}>
+      <Button color="primary" onClick={() => handleClick()}>
         加10
       </Button>
-      <Button type="primary" onClick={() => handleClickReduce()}>
+      <Button color="primary" onClick={() => handleClickReduce()}>
         减1
       </Button>
       <div>{count}</div>

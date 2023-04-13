@@ -1,5 +1,5 @@
 import url from '@/config/url';
-import { Spin } from 'antd';
+import { SpinLoading } from 'antd-mobile';
 import React from 'react';
 import { Navigate, RouteObject, useRoutes } from 'react-router-dom';
 
@@ -16,7 +16,7 @@ const Routers: React.FC = () => {
       }
       return {
         ...item,
-        element: <React.Suspense fallback={<Spin tip="页面加载中..." />}>{item.element}</React.Suspense>,
+        element: <React.Suspense fallback={<SpinLoading />}>{item.element}</React.Suspense>,
       };
     });
   };

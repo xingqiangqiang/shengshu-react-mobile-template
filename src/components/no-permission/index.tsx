@@ -1,5 +1,5 @@
 import noMatch from '@/images/common/403.png';
-import { Button } from 'antd';
+import { Button } from 'antd-mobile';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -16,10 +16,10 @@ const NoPermission: React.FC = () => {
       <img className={styles.img} src={noMatch} alt="404" />
       <div>抱歉，超出访问许可</div>
       <div className={styles.btns}>
-        <Button type="link" onClick={() => navigate(-1)}>
+        <Button fill="none" onClick={() => navigate(-1)}>
           返回上一级
         </Button>
-        <Button type="link" onClick={backLogin}>
+        <Button fill="none" onClick={backLogin}>
           切换账号
         </Button>
       </div>

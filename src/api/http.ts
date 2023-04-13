@@ -1,4 +1,4 @@
-import { message } from 'antd';
+import { Toast } from 'antd-mobile';
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 import Cookies from 'js-cookie';
 
@@ -13,12 +13,11 @@ interface Config extends AxiosRequestConfig {
 
 instance.interceptors.request.use((config: Config) => {
   const accessToken = Cookies.get('CaipAccessToken') || '';
-  message.destroy(1);
+  Toast.clear();
   if (config?.showLoading) {
-    message.loading({
-      key: 1,
-      duration: 0,
+    Toast.show({
       content: '加载中...',
+      icon: 'loading',
     });
   }
 
@@ -34,7 +33,7 @@ instance.interceptors.request.use((config: Config) => {
 
 instance.interceptors.response.use(
   (response: AxiosResponse) => {
-    message.destroy(1);
+    Toast.clear();
     if (response.status === 200) {
       /* 处理下载相关接口 */
       if (response.data instanceof Blob || response.data instanceof ArrayBuffer) {
@@ -44,10 +43,10 @@ instance.interceptors.response.use(
         return Promise.resolve(response.data);
       } else {
         if (!(response.config as Config).customMessage) {
-          message.error({
-            key: 1,
-            duration: 3,
+          Toast.show({
             content: response.data.msg || '接口异常,请重试!',
+            icon: 'fail',
+            duration: 3000,
           });
         }
         return Promise.reject(response.data);
@@ -71,10 +70,10 @@ instance.interceptors.response.use(
         window.location.replace(`${import.meta.env.BASE_URL}login`);
       }, 2000);
     }
-    message.error({
-      key: 1,
-      duration: 3,
+    Toast.show({
       content: errorMessage,
+      icon: 'fail',
+      duration: 3000,
     });
     return Promise.reject(err);
   },
