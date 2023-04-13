@@ -1,0 +1,9 @@
+.container {
+  border: 1px solid;
+
+  :global {
+    .com-msg {
+      color: blue;
+    }
+  }
+}

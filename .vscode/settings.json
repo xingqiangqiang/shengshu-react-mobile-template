@@ -1,0 +1,38 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true,
+    "source.fixAll.eslint": true
+  },
+  "stylelint.snippet": [
+    "css",
+    "less",
+    "postcss",
+    "scss"
+  ],
+  "stylelint.validate": [
+    "css",
+    "less",
+    "postcss",
+    "scss"
+  ],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+  ],
+  "[css]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-standard-scss",
+    "stylelint-config-recess-order",
+    "stylelint-config-prettier",
+    "stylelint-config-prettier-scss"
+  ],
+  "plugins": [
+    "stylelint-order",
+    "stylelint-scss"
+  ],
+  "rules": {
+    "indentation": 2,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": [
+          "global"
+        ]
+      }
+    ],
+    "scss/at-rule-no-unknown": null,
+    "max-line-length": 150,
+    "no-descending-specificity": null
+  }
+}

@@ -1,0 +1,29 @@
+@mixin fadein($duration:2s,$delay:0s) {
+  opacity: 0;
+  animation: fade-in $duration ease-in $delay forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@mixin text-overflow($number: 1) {
+  @if $number == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    /* stylelint-disable-next-line value-no-vendor-prefix */
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $number;
+  }
+}
