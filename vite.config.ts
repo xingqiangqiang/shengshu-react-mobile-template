@@ -18,6 +18,7 @@ console.log('当前环境:', process.env.NODE_ENV);
 
 export default defineConfig({
   base,
+  envDir: 'src',
   build: {
     rollupOptions: {
       output: {
