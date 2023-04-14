@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "node imagemin.mjs",
-    "build": "tsc && vite build",
+    "build": "sh build/build.sh",
     "preview": "vite preview",
     "prettier": "prettier --cache --check **/**/*.{tsx,ts,js}",
     "prettier:fix": "prettier --cache --write **/**/*.{tsx,ts,js}",
