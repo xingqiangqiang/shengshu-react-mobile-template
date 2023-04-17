@@ -6,32 +6,32 @@
 ### 环境依赖
 
 ```
-node >=16
+node >=16.14
+pnpm >=3
 ```
 
 ### 安装依赖包
 
 ```
-yarn
-yarn install
+pnpm install
 ```
 
 ### 启动项目
 
 ```
-yarn dev
+pnpm dev
 ```
 
 ### 格式化代码
 
 ```
-yarn prettier
+pnpm prettier
 ```
 
 ### 检查 scss 样式
 
 ```
-yarn stylelint
+pnpm stylelint
 ```
 
 ### scss规范
@@ -86,5 +86,5 @@ subject: 是commit的简短描述，不超过50个字符。
 
 ```
 1.修改 ytt.config.ts 中 token 切换工程（打开 yapi 项目->设置->token 配置->复制 token）
-2.执行 yarn ytt 生成 src/api 里的文件
+2.执行 pnpm ytt 生成 src/api 里的文件
 ```

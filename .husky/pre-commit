@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run lint-staged
+pnpm run lint-staged
 
 # 获取上面脚本的退出码
 exitCode="$?"

@@ -10,14 +10,14 @@
     "preview": "vite preview",
     "prettier": "prettier --cache --check **/**/*.{tsx,ts,js}",
     "prettier:fix": "prettier --cache --write **/**/*.{tsx,ts,js}",
-    "stylelint": "npx stylelint **/*{.css,.scss} --cache",
-    "stylelint:fix": "npx stylelint **/*{.css,.scss} --fix --cache",
-    "eslint": "npx eslint src --cache --ext .js,.jsx,.ts,.tsx",
-    "eslint:fix": "npx eslint src --fix --cache --ext  .js,.jsx,.ts,.tsx",
+    "stylelint": "pnpm stylelint **/*{.css,.scss} --cache",
+    "stylelint:fix": "pnpm stylelint **/*{.css,.scss} --fix --cache",
+    "eslint": "pnpm eslint src --cache --ext .js,.jsx,.ts,.tsx",
+    "eslint:fix": "pnpm eslint src --fix --cache --ext  .js,.jsx,.ts,.tsx",
     "prepare": "husky install",
     "lint-staged": "lint-staged",
-    "lintfix": "yarn prettier:fix\nyarn stylelint:fix\nyarn eslint:fix",
-    "ytt": "npx ytt"
+    "lintfix": "pnpm prettier:fix\npnpm stylelint:fix\npnpm eslint:fix",
+    "ytt": "pnpm ytt"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
@@ -48,6 +48,7 @@
     "ahooks": "^3.6.2",
     "antd-mobile": "^5.29.1",
     "axios": "^0.27.2",
+    "classnames": "^2.3.2",
     "dayjs": "^1.11.3",
     "js-cookie": "^2.2.1",
     "react": "^18.0.0",
@@ -107,8 +108,8 @@
     "yapi-to-typescript": "^3.34.1"
   },
   "engines": {
-    "node": ">=16.0.0",
-    "yarn": ">=1"
+    "node": ">=16.14.0",
+    "pnpm": ">=3"
   },
   "browserslist": {
     "development": [
