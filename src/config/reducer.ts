@@ -1,4 +1,4 @@
-import counter from '@/pages/redux-test/reducer';
+import counter from '@/pages/home/reducer';
 
 export default {
   counter,

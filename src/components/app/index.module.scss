@@ -1,9 +1,21 @@
 .app {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: $main-white;
+
   :global {
-    .box {
-      width: 100%;
-      height: 100px;
-      background-color: #32669a;
+    .content-layout-body {
+      flex: 1;
+      overflow: hidden;
+      background-color: $main-grey;
+    }
+
+    .content-layout-bottom {
+      height: calc(50px + env(safe-area-inset-bottom));
+      min-height: 50px;
     }
   }
 }

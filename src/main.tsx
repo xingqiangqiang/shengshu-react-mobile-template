@@ -15,7 +15,7 @@ dayjs.locale('zh-cn');
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <React.Suspense fallback={<SpinLoading />}>
+    <React.Suspense fallback={<SpinLoading color="primary" />}>
       <Provider store={store}>
         <BrowserRouter basename={import.meta.env.BASE_URL}>
           <App />

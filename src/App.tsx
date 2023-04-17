@@ -16,7 +16,7 @@ const Routers: React.FC = () => {
       }
       return {
         ...item,
-        element: <React.Suspense fallback={<SpinLoading />}>{item.element}</React.Suspense>,
+        element: <React.Suspense fallback={<SpinLoading color="primary" />}>{item.element}</React.Suspense>,
       };
     });
   };
@@ -34,6 +34,24 @@ const Routers: React.FC = () => {
       {
         path: app.path,
         element: <app.component />,
+        children: [
+          {
+            path: url.app.home.path,
+            element: <url.app.home.component />,
+          },
+          {
+            path: url.app.todo.path,
+            element: <url.app.todo.component />,
+          },
+          {
+            path: url.app.message.path,
+            element: <url.app.message.component />,
+          },
+          {
+            path: url.app.mine.path,
+            element: <url.app.mine.component />,
+          },
+        ],
       },
       {
         path: notFound.path,

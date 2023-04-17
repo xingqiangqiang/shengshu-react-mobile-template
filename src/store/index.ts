@@ -2,7 +2,7 @@ import reducer from '@/config/reducer';
 import { configureStore } from '@reduxjs/toolkit';
 import { createLogger } from 'redux-logger';
 
-const logger = createLogger({ collapsed: true });
+const logger = createLogger({ collapsed: false });
 
 const store = configureStore({
   reducer: {

@@ -26,6 +26,27 @@ const router = {
     path: '/app',
     title: 'app',
     component: lazy(() => import('@/components/app')),
+
+    home: {
+      path: '/app/home',
+      title: '首页',
+      component: lazy(() => import('@/pages/home/main')),
+    },
+    todo: {
+      path: '/app/todo',
+      title: '待办',
+      component: lazy(() => import('@/pages/todo/main')),
+    },
+    message: {
+      path: '/app/message',
+      title: '消息',
+      component: lazy(() => import('@/pages/message/main')),
+    },
+    mine: {
+      path: '/app/mine',
+      title: '我的',
+      component: lazy(() => import('@/pages/mine/main')),
+    },
   },
 };
 
