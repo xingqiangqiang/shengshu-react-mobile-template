@@ -5,6 +5,7 @@ import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { AppOutline, MessageOutline, UnorderedListOutline, UserOutline } from 'antd-mobile-icons';
 
 import styles from './index.module.scss';
+import url from '@/config/url';
 
 const AppMenu: React.FC = () => {
   const navigate = useNavigate();
@@ -13,23 +14,23 @@ const AppMenu: React.FC = () => {
 
   const tabs = [
     {
-      key: '/app/home',
-      title: '首页',
+      key: url.app.home.path,
+      title: url.app.home.title,
       icon: <AppOutline />,
     },
     {
-      key: '/app/todo',
-      title: '待办',
+      key: url.app.todo.path,
+      title: url.app.todo.title,
       icon: <UnorderedListOutline />,
     },
     {
-      key: '/app/message',
-      title: '消息',
+      key: url.app.message.path,
+      title: url.app.message.title,
       icon: <MessageOutline />,
     },
     {
-      key: '/app/mine',
-      title: '我的',
+      key: url.app.mine.path,
+      title: url.app.mine.title,
       icon: <UserOutline />,
     },
   ];
