@@ -1,6 +1,9 @@
 {
   "workbench.colorTheme": "Visual Studio Dark",
   "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
   "stylelint.snippet": [
     "css",
     "less",
@@ -23,7 +26,7 @@
     "editor.defaultFormatter": "stylelint.vscode-stylelint"
   },
   "[scss]": {
-    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+    "editor.defaultFormatter": "stylelint.vscode-stylelint",
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
