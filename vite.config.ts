@@ -84,9 +84,9 @@ export default defineConfig({
     },
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "@/assats/style/normalize.scss";
-          @import "@/assats/style/variables.scss";
-          @import "@/assats/style/mixin.scss";`,
+        additionalData: `@import "@/assets/style/normalize.scss";
+          @import "@/assets/style/variables.scss";
+          @import "@/assets/style/mixin.scss";`,
       },
     },
     postcss: {
