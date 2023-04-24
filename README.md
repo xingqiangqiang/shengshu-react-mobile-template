@@ -1,5 +1,6 @@
 #### 项目结构
-```javascript
+
+```
 ├── README.md
 ├── build  
 │   └── build.sh            // 构建命令
@@ -32,59 +33,85 @@
 ├── vite.config.ts          // vite配置
 └── ytt.config.ts           // yapi配置
 ```
+
 ##### vscode安装插件
+
 - [eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
 - [prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+
 ##### 环境依赖
+
 ```bash
 node >=16.14
 pnpm >=3
 ```
+
 ##### 安装依赖包
+
 ```bash
 pnpm i
 pnpm run install
 ```
+
 ##### 启动项目
+
 ```bash
 pnpm run dev
 ```
+
 ##### 检查代码规范
+
 ```bash
 pnpm run eslint
 ```
+
 ##### 格式化代码
+
 ```bash
 pnpm run prettier
 ```
+
 ##### 检查样式
+
 ```bash
 pnpm run stylelint
 ```
+
 ##### 构建代码
+
 ```bash
 pnpm run build
 ```
+
 - 为什么使用[pnpm](https://www.pnpm.cn/cli/add)，点击[查看👉](https://juejin.cn/post/6932046455733485575)
+
 #### 开发配置
+
 ##### [vite配置](https://cn.vitejs.dev/config/)
+
 项目构建工具使用vite，修改配置在根目录路下 `vite.config.ts` 进行配置
+
 - 配置代理服务器 `vite.config.ts`
-```javascript
+
+```
 '/mock/api/v1': {
     target: 'http://xxx.xxxx.xxx',
     rewrite: (path) => path.replace(/^\/base/, ''),
     changeOrigin: true,
-},
+}
 ```
+
 - 配置接口前缀和资源路径 `.env.development` `.env.production`
-```javascript
+
+```
 VITE_API_URL = /api
 VITE_SOURCE_URL = http://x.x.x.x:xxxx/
 ```
+
 ##### css模块化规范
-```scss
+
+```
 采用国际通用规范recommended-scss
 采用stylelint对scss代码自动校验纠错
 规范参考文档：https://stylelint.io/user-guide/rules/
@@ -107,8 +134,10 @@ VITE_SOURCE_URL = http://x.x.x.x:xxxx/
   }
 }
 ```
+
 ##### [提交规范](https://commitlint.js.org/#/)
-```javascript
+
+```
 格式：<type>(<scope>): <subject>
 type: 用于说明commit的类别，中允许使用以下7个标识。
       feat：新功能（feature）
@@ -124,8 +153,10 @@ subject: 是commit的简短描述，不超过50个字符。
       2.第一个字母小写
       3.结尾不加句号（.）
 ```
+
 ##### [yapi-to-typescript](https://fjc0k.github.io/yapi-to-typescript/handbook/)
-```javascript
+
+```
 1.修改 ytt.config.ts 中 token 切换工程（打开 yapi 项目->设置->token 配置->复制 token）
 2.执行 pnpm ytt 生成 src/api 里的文件
 ```
