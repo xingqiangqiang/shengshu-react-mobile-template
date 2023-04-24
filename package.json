@@ -8,26 +8,26 @@
     "prebuild": "node imagemin.mjs",
     "build": "sh build/build.sh",
     "preview": "vite preview",
-    "prettier": "prettier --cache --check **/**/*.{tsx,ts,js}",
-    "prettier:fix": "prettier --cache --write **/**/*.{tsx,ts,js}",
-    "stylelint": "pnpm stylelint **/*{.css,.scss} --cache",
-    "stylelint:fix": "pnpm stylelint **/*{.css,.scss} --fix --cache",
-    "eslint": "pnpm eslint src --cache --ext .js,.jsx,.ts,.tsx",
-    "eslint:fix": "pnpm eslint src --fix --cache --ext  .js,.jsx,.ts,.tsx",
+    "prettier": "prettier --check **/**/*.{tsx,ts,js}",
+    "prettier:fix": "prettier --write **/**/*.{tsx,ts,js}",
+    "stylelint": "pnpm stylelint **/*{.css,.scss}",
+    "stylelint:fix": "pnpm stylelint **/*{.css,.scss} --fix",
+    "eslint": "pnpm eslint src --ext .js,.jsx,.ts,.tsx",
+    "eslint:fix": "pnpm eslint src --fix --ext  .js,.jsx,.ts,.tsx",
     "prepare": "husky install",
     "lint-staged": "lint-staged",
-    "lintfix": "pnpm prettier:fix\npnpm stylelint:fix\npnpm eslint:fix",
+    "lintfix": "pnpm run prettier:fix\npnpm run stylelint:fix\npnpm run eslint:fix",
     "ytt": "pnpm ytt"
   },
   "lint-staged": {
-    "**/*.{js,jsx,ts,tsx}": [
-      "eslint --fix --cache"
-    ],
     "**/*.{js,jsx,ts,tsx,cjs,less,scss,css,md}": [
-      "prettier --write --cache"
+      "pnpm run prettier:fix"
     ],
     "**/*.{less,scss,css}": [
-      "stylelint --fix --cache"
+      "pnpm run stylelint:fix"
+    ],
+    "**/*.{js,jsx,ts,tsx}": [
+      "pnpm run eslint:fix"
     ]
   },
   "keywords": [
