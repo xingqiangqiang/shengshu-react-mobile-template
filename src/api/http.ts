@@ -3,7 +3,11 @@ import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 import Cookies from 'js-cookie';
 
 const instance = axios.create({
+  baseURL: import.meta.env.VITE_BASE_URL,
   timeout: 120000,
+  headers: {
+    'Content-Type': 'application/json',
+  },
 });
 
 interface Config extends AxiosRequestConfig {
@@ -12,7 +16,8 @@ interface Config extends AxiosRequestConfig {
 }
 
 instance.interceptors.request.use((config: Config) => {
-  const accessToken = Cookies.get('CaipAccessToken') || '';
+  const accessToken = Cookies.get('access_token') || '';
+  const accessTokenType = Cookies.get('token_type') || '';
   Toast.clear();
   if (config?.showLoading) {
     Toast.show({
@@ -25,7 +30,7 @@ instance.interceptors.request.use((config: Config) => {
     ...config,
     // header中添加鉴权
     headers: {
-      accessToken,
+      Authorization: `${accessTokenType} ${accessToken}`,
       ...config.headers,
     },
   };
@@ -66,6 +71,8 @@ instance.interceptors.response.use(
 
     if (401 === err.response.status) {
       errorMessage = '登录已过期，请重新登录';
+      Cookies.remove('access_token');
+      Cookies.remove('token_type');
       setTimeout(() => {
         window.location.replace(`${import.meta.env.BASE_URL}login`);
       }, 2000);
